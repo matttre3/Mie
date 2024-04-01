@@ -1,30 +1,29 @@
-# React + TypeScript + Vite
+# Mie 🎨
+![mie-github](https://github.com/matttre3/Mie/assets/140153086/51677244-6bc6-48dc-90ce-67e0a4fa27a4)
+Welcome to Mie! Mie is a web application designed to simplify the process of determining if a piece of clothing suits your personal color palette through armocromia analysis.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Status ⚠️(IN PROGRESS)⚠️
 
-Currently, two official plugins are available:
+Mie is currently in the design phase, with ongoing exploration of its architecture and features. Development will proceed with a focus on implementing the outlined functionalities and integrating the chosen technologies.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Description
 
-## Expanding the ESLint configuration
+Mie allows users to take photos of clothing items or upload images from online shops. It then analyzes the colors present in the image and provides the user with an armocromic palette, helping them determine whether the clothing item complements their personal color palette.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Project Highlights
 
-- Configure the top-level `parserOptions` property like this:
+- **Armocromic Analysis**: Mie offers armocromic analysis to help users determine if a clothing item suits their personal color palette.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- **Photo Capture and Upload**: Users can either take photos of clothing items or upload images from online shops for analysis.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- **Color Palette Generation**: Mie generates an armocromic color palette based on the colors present in the uploaded image, providing users with insights into whether the clothing item aligns with their color palette.
+
+## Technologies Used
+
+- **Frontend**: Mie is built using React with TypeScript, utilizing features such as `useState`, `useEffect`, and `React Router`. Tailwind CSS is used for styling the interface.
+
+- **Backend**: The backend is implemented in Node.js with Express, facilitating communication between the frontend and the database.
+
+- **Database**: Mie utilizes PostgreSQL as its database to store information about user preferences and uploaded images.
+
+- **Color Analysis**: Mie currently plans to integrate node-vibrant (npm) for color analysis. Additionally, exploration of AI-based solutions for color detection is underway to enhance the accuracy of armocromic analysis.
