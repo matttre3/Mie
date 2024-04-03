@@ -1,5 +1,7 @@
 # Mie 🎨
-![mie-github](https://github.com/matttre3/Mie/assets/140153086/51677244-6bc6-48dc-90ce-67e0a4fa27a4)
+
+![mie github](https://github.com/matttre3/Mie/assets/140153086/8df71826-1c74-4e0b-b53c-4aaaf899146a)
+
 Welcome to Mie! Mie is a web application designed to simplify the process of determining if a piece of clothing suits your personal color palette through armocromia analysis.
 
 ## Project Status ⚠️(IN PROGRESS)⚠️
