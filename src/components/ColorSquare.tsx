@@ -1,5 +1,3 @@
-import React from "react";
-
 type Color = [number, number, number];
 interface ColorSquareProps {
   color: Color;
