@@ -1,4 +1,5 @@
-import { ChangeEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import ColorSquare from "./components/ColorSquare";
 import ColorThief from "@neutrixs/colorthief";
 import { FilesUpload } from "./FilesUpload";
 
@@ -34,34 +35,20 @@ function App() {
   }, [imageSrc]);
 
   return (
-    <div className="flex items-center justify-center flex-col w-full">
-      <div style={{ display: "flex" }}>
-        {palette.map((color, i) => (
-          <ColorSquare key={i} color={color} />
-        ))}
+    <div className="sm:container mx-auto bg-white">
+      <div className="flex items-center justify-center flex-col w-full ">
+        <img className="pt-20" src="/mie-text-logo.png" alt="" />
+
+        {color && <ColorSquare color={color} />}
+        <div className="flex gap-2 flex-wrap">
+          {palette.map((color, i) => (
+            <ColorSquare key={i} color={color} />
+          ))}
+        </div>
+
+        <FilesUpload onChange={handleChange} />
       </div>
-      {color && <ColorSquare color={color} />}
-      <FilesUpload onChange={handleChange} />
     </div>
-  );
-}
-
-interface ColorSquareProps {
-  color: Color;
-}
-
-function ColorSquare({ color }: ColorSquareProps) {
-  return (
-    <div
-      style={{
-        width: "40px",
-        height: "40px",
-        background:
-          color.length === 3
-            ? `rgb(${color[0]},${color[1]},${color[2]})`
-            : "black",
-      }}
-    />
   );
 }
 

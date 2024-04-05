@@ -25,7 +25,7 @@ export function FilesUpload({ onChange }: Props) {
 
   return (
     <div
-      className="flex items-center justify-center w-full mt-6"
+      className="flex items-center justify-center w-full mt-6 pl-4 pr-4"
       onDragOver={onDragOver}
       onDragLeave={onDragLeave}
       onDrop={onDrop}
@@ -41,6 +41,7 @@ export function FilesUpload({ onChange }: Props) {
         )}
       >
         <div className="flex flex-col items-center justify-center pt-3 pb-4">
+          <img className="pb-2" src="upload-image.svg" alt="" />
           <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
             <span className="font-semibold">Clicca per caricare</span> oppure
             trascina
