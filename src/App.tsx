@@ -83,7 +83,7 @@ function App() {
               ))}
             </div>
             <button
-              className="bg-stone-500 text-white p-2 poppins-regular rounded-md flex items-center"
+              className="bg-stone-500 text-white p-2 poppins-regular rounded-md flex items-center mt-16"
               onClick={resetPalette}
             >
               <img className="w-5 mr-2 " src="/camera-solid.svg" alt="" />
