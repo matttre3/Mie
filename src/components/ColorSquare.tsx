@@ -27,7 +27,7 @@ const ColorSquare: React.FC<ColorSquareProps> = ({
         <div
           className={
             isSelected
-              ? "animate-bounce w-12 h-2 mb-4 bg-slate-900 rounded-xl"
+              ? "animate-bounce w-12 h-2 mb-4 bg-black rounded-xl"
               : "h-2 mb-4"
           }
         ></div>

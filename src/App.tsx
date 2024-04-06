@@ -1,7 +1,11 @@
 import PhotoDetection from "./components/PhotoDetection";
 
 function App() {
-  return <PhotoDetection />;
+  return (
+    <div>
+      <PhotoDetection />
+    </div>
+  );
 }
 
 export default App;

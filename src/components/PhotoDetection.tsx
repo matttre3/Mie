@@ -59,6 +59,11 @@ function PhotoDetection() {
 
         {palette.length > 0 && (
           <>
+            <p className="text-center mt-8 poppins-regular text-sm text-slate-400">
+              Our software detects the most prominent color within the photo. If
+              the detected color is incorrect, you can further choose from four
+              other detected colors.
+            </p>
             <p className="text-xl poppins-semibold mt-8">Main detected color</p>
             <div>
               <ColorSquare
@@ -86,6 +91,12 @@ function PhotoDetection() {
             >
               <img className="w-4 mr-2 " src="/camera-solid.svg" alt="" />
               Take an other picture
+            </button>
+            <button
+              className="bg-stone-500 text-white p-2 poppins-regular rounded-md flex items-center text-sm"
+              onClick={resetPalette}
+            >
+              Confirm Color
             </button>
           </>
         )}
