@@ -16,7 +16,7 @@ const ColorSquare: React.FC<ColorSquareProps> = ({
       <div className={"flex flex-col items-center"}>
         <div
           onClick={onClick}
-          className={"mt-4 mb-4 w-14 h-14 rounded-xl transition-all "}
+          className={"mt-4 mb-4 w-16 h-16 rounded-xl transition-all "}
           style={{
             background:
               color.length === 3

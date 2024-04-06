@@ -65,7 +65,7 @@ function PhotoDetection() {
               other detected colors.
             </p>
             <button
-              className="bg-red-500 text-white p-2 poppins-regular rounded-md flex items-center mt-3 text-sm"
+              className="bg-slate-500 text-white p-2 poppins-regular rounded-md flex items-center mt-3 text-sm"
               onClick={resetPalette}
             >
               <img className="w-4 mr-2 " src="/camera-solid.svg" alt="" />
