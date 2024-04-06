@@ -64,6 +64,13 @@ function PhotoDetection() {
               the detected color is incorrect, you can further choose from four
               other detected colors.
             </p>
+            <button
+              className="bg-red-500 text-white p-2 poppins-regular rounded-md flex items-center mt-3 text-xs"
+              onClick={resetPalette}
+            >
+              <img className="w-4 mr-2 " src="/camera-solid.svg" alt="" />
+              Take an other picture
+            </button>
             <p className="text-xl poppins-semibold mt-8">Main detected color</p>
             <div>
               <ColorSquare
@@ -85,17 +92,8 @@ function PhotoDetection() {
                 />
               ))}
             </div>
-            <button
-              className="bg-stone-500 text-white p-2 poppins-regular rounded-md flex items-center mt-16 text-sm"
-              onClick={resetPalette}
-            >
-              <img className="w-4 mr-2 " src="/camera-solid.svg" alt="" />
-              Take an other picture
-            </button>
-            <button
-              className="bg-stone-500 text-white p-2 poppins-regular rounded-md flex items-center text-sm"
-              onClick={resetPalette}
-            >
+
+            <button className="bg-blue-500 text-white p-2 poppins-regular rounded-md flex items-center text-xs">
               Confirm Color
             </button>
           </>
