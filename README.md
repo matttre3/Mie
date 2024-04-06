@@ -4,7 +4,7 @@
 
 Welcome to Mie! Mie is a web application designed to simplify the process of determining if a piece of clothing suits your personal color palette through armocromia analysis.
 
-## Project Status ⚠️(IN PROGRESS)⚠️
+## Project Status ⚠️(IN PROGRESS)⚠️ ➡️<a href="https://mie-phi.vercel.app/">Check live web app here!</a>⬅️
 
 Mie is currently in the design phase, with ongoing exploration of its architecture and features. Development will proceed with a focus on implementing the outlined functionalities and integrating the chosen technologies.
 
