@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ColorSquare from "./components/ColorSquare";
 import ColorThief from "@neutrixs/colorthief";
-import { FilesUpload } from "./FilesUpload";
+import FilesUpload from "./components/FilesUpload";
 
 type Color = [number, number, number];
 
@@ -10,7 +10,7 @@ function App() {
   const [palette, setPalette] = useState<Color[]>([]);
   //const [color, setColor] = useState<Color>();
 
-  const [selectedSquare, setSelectedSquare] = useState<Color>();
+  const [selectedSquare, setSelectedSquare] = useState<any>();
 
   const colorThief = new ColorThief();
 
@@ -31,12 +31,19 @@ function App() {
     setSelectedSquare(color);
   }
 
+  function resetPalette() {
+    setPalette([]);
+  }
+
   useEffect(() => {
     if (imageSrc == "") return;
     let image = new Image();
     image.src = imageSrc;
     setTimeout(() => {
-      setPalette(colorThief.getPalette(image, 5, 1));
+      const newPalette = colorThief.getPalette(image, 5, 1);
+      setPalette(newPalette);
+      setSelectedSquare(newPalette[0]);
+
       //setColor(colorThief.getColor(image, 1));
     }, 0);
   }, [imageSrc]);
@@ -45,27 +52,47 @@ function App() {
     <div className="sm:container mx-auto bg-white">
       <div className="flex items-center justify-center flex-col w-full ">
         <img
-          className="pt-20 w-24
+          className="pt-20 w-28
          "
           src="/MIE-LOGO.png"
           alt=""
         />
         <img className="mt-2" src="/Mie.svg" alt="" />
 
-        <div className="flex gap-2 flex-wrap items-cente justify-center">
-          {palette.map((color, index) => (
-            <ColorSquare
-              key={index}
-              isSelected={selectedSquare === color}
-              onClick={() => handleSquareClick(color)}
-              color={color}
-              number={index}
-            />
-          ))}
-        </div>
+        {palette.length > 0 && (
+          <>
+            <p className="text-xl poppins-semibold mt-8">Main detected color</p>
+            <div>
+              <ColorSquare
+                isSelected={selectedSquare === palette[0]}
+                onClick={() => handleSquareClick(palette[0])}
+                color={palette[0]}
+              />
+            </div>
+            <p className="text-xl poppins-semibold">
+              Secondary detected colors
+            </p>
+            <div className="flex gap-2 flex-wrap items-cente justify-center">
+              {palette.slice(1).map((color, index) => (
+                <ColorSquare
+                  key={index}
+                  isSelected={selectedSquare === color}
+                  onClick={() => handleSquareClick(color)}
+                  color={color}
+                />
+              ))}
+            </div>
+            <button
+              className="bg-stone-500 text-white p-2 poppins-regular rounded-md flex items-center"
+              onClick={resetPalette}
+            >
+              <img className="w-5 mr-2 " src="/camera-solid.svg" alt="" />
+              Take an other picture
+            </button>
+          </>
+        )}
 
-        <FilesUpload onChange={handleChange} />
-        <button className="pt-2">Confirm</button>
+        {palette.length == 0 && <FilesUpload onChange={handleChange} />}
       </div>
     </div>
   );

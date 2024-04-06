@@ -4,7 +4,7 @@ interface Props {
   onChange: (files: FileList) => void;
 }
 
-export function FilesUpload({ onChange }: Props) {
+const FilesUpload: React.FC<Props> = ({ onChange }) => {
   const [active, setActive] = useState(false);
   function onDragOver(ev: DragEvent<HTMLDivElement>) {
     ev.preventDefault();
@@ -42,8 +42,8 @@ export function FilesUpload({ onChange }: Props) {
       >
         <div className="flex flex-col items-center justify-center pt-3 pb-4">
           <img className="pb-2" src="upload-image.svg" alt="" />
-          <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
-            <span className="font-semibold">Clicca per caricare</span> oppure
+          <p className="mb-2 text-sm text-gray-500 dark:text-gray-400 poppins-regular">
+            <span className="poppins-bold">Clicca per caricare</span> oppure
             trascina
           </p>
         </div>
@@ -57,4 +57,6 @@ export function FilesUpload({ onChange }: Props) {
       </label>
     </div>
   );
-}
+};
+
+export default FilesUpload;
