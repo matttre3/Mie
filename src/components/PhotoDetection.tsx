@@ -2,16 +2,16 @@ import { useEffect, useState } from "react";
 import ColorSquare from "../components/ColorSquare";
 import ColorThief from "@neutrixs/colorthief";
 import FilesUpload from "../components/FilesUpload";
+import { useNavigate } from "react-router-dom";
 
 type Color = [number, number, number];
 
 function PhotoDetection() {
   const [imageSrc, setImageSrc] = useState("");
   const [palette, setPalette] = useState<Color[]>([]);
-
   const [selectedSquare, setSelectedSquare] = useState<any>();
-
   const colorThief = new ColorThief();
+  const navigate = useNavigate();
 
   function handleChange(files: FileList) {
     let image = files.item(0);
@@ -59,20 +59,20 @@ function PhotoDetection() {
 
         {palette.length > 0 && (
           <>
-            <p className="text-center mt-8 poppins-regular text-sm text-slate-400">
+            <p className="text-center mt-8 poppins-regular text-sm text-slate-400 pl-6 pr-6">
               Our software detects the most prominent color within the photo. If
               the detected color is incorrect, you can further choose from four
               other detected colors.
             </p>
             <button
-              className="bg-red-500 text-white p-2 poppins-regular rounded-md flex items-center mt-3 text-xs"
+              className="bg-red-500 text-white p-2 poppins-regular rounded-md flex items-center mt-3 text-sm"
               onClick={resetPalette}
             >
               <img className="w-4 mr-2 " src="/camera-solid.svg" alt="" />
               Take an other picture
             </button>
             <p className="text-xl poppins-semibold mt-8">Main detected color</p>
-            <div>
+            <div className="">
               <ColorSquare
                 isSelected={selectedSquare === palette[0]}
                 onClick={() => handleSquareClick(palette[0])}
@@ -93,7 +93,12 @@ function PhotoDetection() {
               ))}
             </div>
 
-            <button className="bg-blue-500 text-white p-2 poppins-regular rounded-md flex items-center text-xs">
+            <button
+              className="bg-blue-500 text-white p-2 poppins-regular rounded-md flex items-center text-sm"
+              onClick={() => {
+                navigate("/result");
+              }}
+            >
               Confirm Color
             </button>
           </>
