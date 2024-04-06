@@ -1,4 +1,3 @@
-import React from "react";
 import seasons from "../../seasons.json";
 
 const Result = () => {
