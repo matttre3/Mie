@@ -8,7 +8,10 @@ type Color = [number, number, number];
 function App() {
   const [imageSrc, setImageSrc] = useState("");
   const [palette, setPalette] = useState<Color[]>([]);
-  const [color, setColor] = useState<Color>();
+  //const [color, setColor] = useState<Color>();
+
+  const [selectedSquare, setSelectedSquare] = useState<Color>();
+
   const colorThief = new ColorThief();
 
   function handleChange(files: FileList) {
@@ -24,29 +27,45 @@ function App() {
     reader.readAsDataURL(image);
   }
 
+  function handleSquareClick(color: Color) {
+    setSelectedSquare(color);
+  }
+
   useEffect(() => {
     if (imageSrc == "") return;
     let image = new Image();
     image.src = imageSrc;
     setTimeout(() => {
       setPalette(colorThief.getPalette(image, 5, 1));
-      setColor(colorThief.getColor(image, 1));
+      //setColor(colorThief.getColor(image, 1));
     }, 0);
   }, [imageSrc]);
 
   return (
     <div className="sm:container mx-auto bg-white">
       <div className="flex items-center justify-center flex-col w-full ">
-        <img className="pt-20" src="/mie-text-logo.png" alt="" />
+        <img
+          className="pt-20 w-24
+         "
+          src="/MIE-LOGO.png"
+          alt=""
+        />
+        <img className="mt-2" src="/Mie.svg" alt="" />
 
-        {color && <ColorSquare color={color} />}
-        <div className="flex gap-2 flex-wrap">
-          {palette.map((color, i) => (
-            <ColorSquare key={i} color={color} />
+        <div className="flex gap-2 flex-wrap items-cente justify-center">
+          {palette.map((color, index) => (
+            <ColorSquare
+              key={index}
+              isSelected={selectedSquare === color}
+              onClick={() => handleSquareClick(color)}
+              color={color}
+              number={index}
+            />
           ))}
         </div>
 
         <FilesUpload onChange={handleChange} />
+        <button className="pt-2">Confirm</button>
       </div>
     </div>
   );
