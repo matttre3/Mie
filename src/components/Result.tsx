@@ -4,7 +4,7 @@ const Result = () => {
   const palette = Object.values(seasons).flatMap((x) => x);
   console.log(seasons);
 
-  return <></>;
+  return <>{palette}</>;
 };
 
 export default Result;
