@@ -6,10 +6,9 @@ import { useNavigate } from "react-router-dom";
 
 type Color = [number, number, number];
 
-function PhotoDetection() {
+function PhotoDetection({ setSelectedSquare, selectedSquare }) {
   const [imageSrc, setImageSrc] = useState("");
   const [palette, setPalette] = useState<Color[]>([]);
-  const [selectedSquare, setSelectedSquare] = useState<any>();
   const colorThief = new ColorThief();
   const navigate = useNavigate();
 
