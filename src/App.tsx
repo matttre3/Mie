@@ -19,12 +19,7 @@ function App() {
         />
         <Route
           path="/result"
-          element={
-            <Result
-              selectedSquare={selectedSquare}
-              setSelectedSquare={setSelectedSquare}
-            />
-          }
+          element={<Result selectedSquare={selectedSquare} />}
         />
       </Routes>
     </Router>

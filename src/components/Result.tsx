@@ -3,10 +3,25 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { closest } from "color-diff";
 
-const Result = ({ selectedSquare, setSelectedSquare }) => {
+type Color = { R: number; G: number; B: number };
+
+type Seasons = {
+  AUTUNNO: Color[];
+  WINTER: Color[];
+  SPRING: Color[];
+  SUMMER: Color[];
+};
+
+interface ResultProps {
+  selectedSquare: any;
+}
+
+const Result: React.FC<ResultProps> = ({ selectedSquare }) => {
   const palette = Object.values(seasons).flatMap((x) => x);
-  const [closestColor, setClosestColor] = useState();
-  const [resultSeason, setResultSeason] = useState();
+  const [closestColor, setClosestColor] = useState<Color | undefined>(
+    undefined
+  );
+  const [resultSeason, setResultSeason] = useState("");
 
   let newFormatColor = {
     R: selectedSquare[0],
@@ -17,12 +32,14 @@ const Result = ({ selectedSquare, setSelectedSquare }) => {
   useEffect(() => {
     setClosestColor(closest(newFormatColor, palette));
     for (let season in seasons) {
-      seasons[season].forEach((color) => {
-        if (closestColor == color) {
-          setResultSeason(season);
-          console.log(season);
-        }
-      });
+      if (Object.prototype.hasOwnProperty.call(seasons, season)) {
+        seasons[season as keyof Seasons].forEach((color: Color) => {
+          if (closestColor === color) {
+            setResultSeason(season);
+            console.log(season);
+          }
+        });
+      }
     }
   }, [newFormatColor]);
 

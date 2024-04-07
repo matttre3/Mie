@@ -6,7 +6,15 @@ import { useNavigate } from "react-router-dom";
 
 type Color = [number, number, number];
 
-function PhotoDetection({ setSelectedSquare, selectedSquare }) {
+interface PhotoDetectionProps {
+  selectedSquare: any;
+  setSelectedSquare: any;
+}
+
+const PhotoDetection: React.FC<PhotoDetectionProps> = ({
+  setSelectedSquare,
+  selectedSquare,
+}) => {
   const [imageSrc, setImageSrc] = useState("");
   const [palette, setPalette] = useState<Color[]>([]);
   const colorThief = new ColorThief();
@@ -107,6 +115,6 @@ function PhotoDetection({ setSelectedSquare, selectedSquare }) {
       </div>
     </div>
   );
-}
+};
 
 export default PhotoDetection;
