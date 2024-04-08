@@ -48,12 +48,12 @@ const PhotoDetection: React.FC<PhotoDetectionProps> = ({
     if (imageSrc == "") return;
     let image = new Image();
     image.src = imageSrc;
-    setTimeout(() => {
+    image.addEventListener("load", () => {
       const newPalette = colorThief.getPalette(image, 5, 5);
       setPalette(newPalette);
       setSelectedSquare(newPalette[0]);
       setIsLoading(false);
-    }, 100);
+    });
   }, [imageSrc]);
 
   return (
