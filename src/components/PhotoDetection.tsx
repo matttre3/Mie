@@ -1,14 +1,14 @@
-import { useEffect, useState } from "react";
-import ColorSquare from "../components/ColorSquare";
 import ColorThief from "@neutrixs/colorthief";
-import FilesUpload from "../components/FilesUpload";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import ColorSquare from "../components/ColorSquare";
+import FilesUpload from "../components/FilesUpload";
 
-type Color = [number, number, number];
+export type Color = [number, number, number];
 
 interface PhotoDetectionProps {
-  selectedSquare: any;
-  setSelectedSquare: any;
+  selectedSquare?: Color;
+  setSelectedSquare: (color?: Color) => void;
 }
 
 const PhotoDetection: React.FC<PhotoDetectionProps> = ({
@@ -16,6 +16,7 @@ const PhotoDetection: React.FC<PhotoDetectionProps> = ({
   selectedSquare,
 }) => {
   const [imageSrc, setImageSrc] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const [palette, setPalette] = useState<Color[]>([]);
   const colorThief = new ColorThief();
   const navigate = useNavigate();
@@ -24,6 +25,7 @@ const PhotoDetection: React.FC<PhotoDetectionProps> = ({
     let image = files.item(0);
     if (!image) return;
     setImageSrc("");
+    setIsLoading(true);
     var reader = new FileReader();
     reader.onload = () => {
       var dataURL = reader.result;
@@ -47,9 +49,10 @@ const PhotoDetection: React.FC<PhotoDetectionProps> = ({
     let image = new Image();
     image.src = imageSrc;
     setTimeout(() => {
-      const newPalette = colorThief.getPalette(image, 5, 1);
+      const newPalette = colorThief.getPalette(image, 5, 5);
       setPalette(newPalette);
       setSelectedSquare(newPalette[0]);
+      setIsLoading(false);
     }, 0);
   }, [imageSrc]);
 
@@ -111,7 +114,11 @@ const PhotoDetection: React.FC<PhotoDetectionProps> = ({
           </>
         )}
 
-        {palette.length == 0 && <FilesUpload onChange={handleChange} />}
+        {palette.length == 0 && !isLoading && (
+          <FilesUpload onChange={handleChange} />
+        )}
+
+        {isLoading && <p>LOADING</p>}
       </div>
     </div>
   );

@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import PhotoDetection from "./components/PhotoDetection";
+import PhotoDetection, { Color } from "./components/PhotoDetection";
 import Result from "./components/Result";
 import { useState } from "react";
 
 function App() {
-  const [selectedSquare, setSelectedSquare] = useState<any>();
+  const [selectedSquare, setSelectedSquare] = useState<Color | undefined>();
   return (
     <Router>
       <Routes>
