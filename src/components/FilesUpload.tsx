@@ -50,7 +50,6 @@ const FilesUpload: React.FC<Props> = ({ onChange }) => {
         <input
           id="dropzone-file"
           type="file"
-          multiple
           className="hidden"
           onChange={handleChange}
         />
