@@ -53,7 +53,7 @@ const PhotoDetection: React.FC<PhotoDetectionProps> = ({
       setPalette(newPalette);
       setSelectedSquare(newPalette[0]);
       setIsLoading(false);
-    }, 0);
+    }, 100);
   }, [imageSrc]);
 
   return (
