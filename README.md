@@ -24,8 +24,4 @@ Mie allows users to take photos of clothing items or upload images from online s
 
 - **Frontend**: Mie is built using React with TypeScript, utilizing features such as `useState`, `useEffect`, and `React Router`. Tailwind CSS is used for styling the interface.
 
-- **Backend**: The backend is implemented in Node.js with Express, facilitating communication between the frontend and the database.
-
-- **Database**: Mie utilizes PostgreSQL as its database to store information about user preferences and uploaded images.
-
-- **Color Analysis**: Mie currently plans to integrate node-vibrant (npm) for color analysis. Additionally, exploration of AI-based solutions for color detection is underway to enhance the accuracy of armocromic analysis.
+- **Color Analysis**: For color analysis, Mie integrates npm packages such as color-diff and color-thief. These tools enhance the accuracy of armocromic analysis by detecting and analyzing colors within images uploaded by users.
