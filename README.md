@@ -6,7 +6,7 @@ Welcome to Mie! Mie is a web application designed to simplify the process of det
 
 ## Project Status ⚠️(IN PROGRESS)⚠️ ➡️<a href="https://mie-phi.vercel.app/">Check live web app here!</a>⬅️
 
-Mie is currently in the design phase, with ongoing exploration of its architecture and features. Development will proceed with a focus on implementing the outlined functionalities and integrating the chosen technologies.
+Currently, the software is in its initial phase where it can perform its core function, which is to recognize colors from a photo and determine if the most prominent color belongs to an armochromatic color palette or not. In future developments, the goal is to add a test to detect the user's personal color palette.
 
 ## Project Description
 
