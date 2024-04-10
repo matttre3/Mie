@@ -60,7 +60,7 @@ const PhotoDetection: React.FC<PhotoDetectionProps> = ({
     <div className="sm:container mx-auto bg-white">
       <div className="flex items-center justify-center flex-col w-full ">
         <img
-          className="pt-20 w-28
+          className="animation-spin pt-20 w-28
          "
           src="/MIE-LOGO.png"
           alt=""
