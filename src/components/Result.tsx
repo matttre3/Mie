@@ -50,7 +50,7 @@ const Result: React.FC<ResultProps> = ({ selectedSquare }) => {
           <p className="text-center mt-8 poppins-regular text-l text-slate-400 pl-6 pr-6">
           Our software has identified that the selected color belongs to the following color palette:
             </p>
-          <SeasonBlock season = {resultSeason}/>
+          <SeasonBlock  w = {"big"} season = {resultSeason}/>
         </div>
       </div>
     </>
