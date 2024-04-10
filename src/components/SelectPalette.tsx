@@ -1,7 +1,6 @@
 import SeasonBlock from './SeasonBlock'
 
 const SelectPalette = () => {
-    const w = 'small'
     return (
     <div className="sm:container mx-auto bg-white">
       <div className="flex items-center justify-center flex-col w-full ">
