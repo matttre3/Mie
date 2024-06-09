@@ -3,14 +3,21 @@ import PhotoDetection, { Color } from "./components/PhotoDetection";
 import Result from "./components/Result";
 import { useState } from "react";
 import SelectPalette from "./components/SelectPalette";
+import Home from "./components/Home";
 
 function App() {
   const [selectedSquare, setSelectedSquare] = useState<Color | undefined>();
   return (
     <Router>
       <Routes>
-        <Route
+      <Route
           path="/"
+          element={
+            <Home/>
+          }
+        />
+        <Route
+          path="/photodetection"
           element={
             <PhotoDetection
               selectedSquare={selectedSquare}

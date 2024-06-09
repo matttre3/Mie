@@ -7,7 +7,9 @@ export default {
         winter: ["Righteous", 'sans-serif'],
         spring: ["Reem Kufi Ink", 'sans-serif'],
         summer: ["Patua One", 'serif'],
-        autumn: ["Pattaya", 'sans-serif']
+        autumn: ["Pattaya", 'sans-serif'],
+        rosmatika: ["Rosmatika", 'sans-serif'],
+        poppins: ["Poppins", 'sans-serif']
       },
       backgroundImage:{
         'autumn-bg': "url('/autumn-bg.png')",
