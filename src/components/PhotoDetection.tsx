@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ColorSquare from "../components/ColorSquare";
 import FilesUpload from "../components/FilesUpload";
+import Logo from "./Logo";
 
 export type Color = [number, number, number];
 
@@ -57,19 +58,13 @@ const PhotoDetection: React.FC<PhotoDetectionProps> = ({
   }, [imageSrc]);
 
   return (
-    <div className="sm:container mx-auto bg-white">
-      <div className="flex items-center justify-center flex-col w-full ">
-        <img
-          className="animation-spin pt-20 w-28
-         "
-          src="/MIE-LOGO.png"
-          alt=""
-        />
-        <img className="mt-2" src="/Mie.svg" alt="" />
+    <div className="sm:container mx-auto h-screen">
+      <div className="flex items-center justify-center flex-col w-full min-h-screen ">
+      <Logo/>
 
         {palette.length > 0 && (
           <>
-            <p className="text-center mt-8 poppins-regular text-sm text-slate-400 pl-6 pr-6">
+            <p className="text-center mt-8 poppins-regular text-sm text-slate-700 pl-6 pr-6">
               Our software detects the most prominent color within the photo. If
               the detected color is incorrect, you can further choose from four
               other detected colors.

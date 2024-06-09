@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      colors: {
+        creme: '#F4EBD2'
+      },
       fontFamily:{
         winter: ["Righteous", 'sans-serif'],
         spring: ["Reem Kufi Ink", 'sans-serif'],
