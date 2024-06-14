@@ -1,0 +1,266 @@
+{
+    "test" : [
+        {   
+            "number" : 1,
+            "question" : "Come reagisce la tua pelle al sole?",
+            "answers" : [
+                {
+                    "text":"Ti scotti facilmente e non ti abbronzi",
+                    "image":""
+                },
+                {
+                    "text":"Ti scotti ma poi ti abbronzi",
+                    "image":""
+                },
+                {
+                    "text":"Non ti scotti e ti abbronzi facilmente",
+                    "image":""
+                },
+                {
+                    "text":"Non ti scotti ma non ti abbronzi",
+                    "image":""
+                }
+            ]
+        },
+        {   
+            "number" : 2,
+            "question" : "Hai lentiggini?",
+            "answers" : [
+                {
+                    "text":"Si, sono tendenti al caffè",
+                    "image":""
+                },
+                {
+                    "text":"Si, sono tendenti al mattone",
+                    "image":""
+                },
+                {
+                    "text":"No",
+                    "image":""
+                }
+            ]
+        }, 
+        {   
+            "number" : 3,
+            "question" : "Le tue labbra di che colore sono?",
+            "answers" : [
+                {
+                    "text":"Chiare e tendenti al pesca",
+                    "image":"/labbra1.png"
+                },
+                {
+                    "text":"Chiare e tendenti al rosa violaceo",
+                    "image":"/labbra2.png"
+                },
+                {
+                    "text":"Scure e tendenti al dorato",
+                    "image":"/labbra3.png"
+                },
+                {
+                    "text":"Scure e tendenti al liquirizia",
+                    "image":"/labbra4.png"
+                }
+            ]
+        }, 
+        {
+            "number" : 4,
+            "question" : "Qual'è il colore della tua pelle?",
+            "answers" : [
+                {
+                    "text":"",
+                    "image":"/pelle1.png"
+                },
+                {
+                    "text":"",
+                    "image":"/pelle2.png"
+                },
+                {
+                    "text":"",
+                    "image":"/pelle3.png"
+                },
+                {
+                    "text":"",
+                    "image":"/pelle4.png"
+                },
+                {
+                    "text":"",
+                    "image":"/pelle5.png"
+                },
+                {
+                    "text":"",
+                    "image":"/pelle6.png"
+                },
+                {
+                    "text":"",
+                    "image":"/pelle7.png"
+                },
+                {
+                    "text":"",
+                    "image":"/pelle8.png"
+                },
+                {
+                    "text":"",
+                    "image":"/pelle9.png"
+                },
+                {
+                    "text":"",
+                    "image":"/pelle10.png"
+                },
+                {
+                    "text":"",
+                    "image":"/pelle11.png"
+                },
+                {
+                    "text":"",
+                    "image":"/pelle12.png"
+                },
+                {
+                    "text":"",
+                    "image":"/pelle8.png"
+                },
+                {
+                    "text":"",
+                    "image":"/pelle9.png"
+                },
+                {
+                    "text":"",
+                    "image":"/pelle10.png"
+                },
+                {
+                    "text":"",
+                    "image":"/pelle11.png"
+                },
+                {
+                    "text":"",
+                    "image":"/pelle12.png"
+                },
+                {
+                    "text":"",
+                    "image":"/pelle13.png"
+                },
+                {
+                    "text":"",
+                    "image":"/pelle14.png"
+                },
+                {
+                    "text":"",
+                    "image":"/pelle15.png"
+                },
+                {
+                    "text":"",
+                    "image":"/pelle16.png"
+                },
+                {
+                    "text":"",
+                    "image":"/pelle17.png"
+                },
+                {
+                    "text":"",
+                    "image":"/pelle18.png"
+                }
+
+            ]
+        },
+        {
+            "number" : 5,
+            "question" : "Di che colore sono i tuoi capelli?",
+            "answers" : [
+                {
+                    "text":"",
+                    "image":"/capelli1.png"
+                },
+                {
+                    "text":"",
+                    "image":"/capelli2.png"
+                },
+                {
+                    "text":"",
+                    "image":"/capelli3.png"
+                },
+                {
+                    "text":"",
+                    "image":"/capelli4.png"
+                },
+                {
+                    "text":"",
+                    "image":"/capelli5.png"
+                },
+                {
+                    "text":"",
+                    "image":"/capelli6.png"
+                },
+                {
+                    "text":"",
+                    "image":"/capelli7.png"
+                },
+                {
+                    "text":"",
+                    "image":"/capelli8.png"
+                },
+                {
+                    "text":"",
+                    "image":"/capelli9.png"
+                },
+                {
+                    "text":"",
+                    "image":"/capelli10.png"
+                },
+                {
+                    "text":"",
+                    "image":"/capelli11.png"
+                },
+                {
+                    "text":"",
+                    "image":"/capelli12.png"
+                },
+                {
+                    "text":"",
+                    "image":"/capelli13.png"
+                }
+            ]
+        },
+        {
+            "number" : 6,
+            "question" : "Di che colore sono i tuoi occhi?",
+            "answers" : [
+                {
+                    "text":"",
+                    "image":"/occhi1.png"
+                },
+                {
+                    "text":"",
+                    "image":"/occhi2.png"
+                },
+                {
+                    "text":"",
+                    "image":"/occhi3.png"
+                },
+                {
+                    "text":"",
+                    "image":"/occhi4.png"
+                },
+                {
+                    "text":"",
+                    "image":"/occhi5.png"
+                },
+                {
+                    "text":"",
+                    "image":"/occhi6.png"
+                },
+                {
+                    "text":"",
+                    "image":"/occhi7.png"
+                },
+                {
+                    "text":"",
+                    "image":"/occhi8.png"
+                },
+                {
+                    "text":"",
+                    "image":"/occhi9.png"
+                }
+            ]
+        }
+
+    ]
+}

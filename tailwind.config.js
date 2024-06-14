@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      animation: {
+        'bounce-slow': 'bounce 10s linear infinite',
+      },
       colors: {
         creme: '#F4EBD2'
       },

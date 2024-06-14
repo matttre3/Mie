@@ -4,6 +4,7 @@ import Result from "./components/Result";
 import { useState } from "react";
 import SelectPalette from "./components/SelectPalette";
 import Home from "./components/Home";
+import Test from "./components/Test";
 
 function App() {
   const [selectedSquare, setSelectedSquare] = useState<Color | undefined>();
@@ -14,6 +15,12 @@ function App() {
           path="/"
           element={
             <Home/>
+          }
+        />
+        <Route
+          path="/test"
+          element={
+            <Test/>
           }
         />
         <Route
