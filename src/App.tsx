@@ -5,9 +5,12 @@ import { useState } from "react";
 import SelectPalette from "./components/SelectPalette";
 import Home from "./components/Home";
 import Test from "./components/Test";
+import TestResult from "./components/TestResult";
 
 function App() {
   const [selectedSquare, setSelectedSquare] = useState<Color | undefined>();
+  const [answers, setAnswers] = useState<number[]>([]);
+
   return (
     <Router>
       <Routes>
@@ -20,7 +23,7 @@ function App() {
         <Route
           path="/test"
           element={
-            <Test/>
+            <Test answers={answers} setAnswers={setAnswers} />
           }
         />
         <Route
@@ -40,6 +43,11 @@ function App() {
         <Route
           path="/selection"
           element={<SelectPalette/>}
+        />
+
+        <Route
+          path="/test-result"
+          element={<TestResult answers={answers}/>}
         />
 
       </Routes>

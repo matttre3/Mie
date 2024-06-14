@@ -4,10 +4,16 @@ import { QuizData } from "../types";
 import cx from "classnames";
 import { useNavigate } from "react-router-dom";
 
-const Test: React.FC = () => {
+interface TestProps {
+  answers: number[];
+  setAnswers: React.Dispatch<React.SetStateAction<number[]>>;
+}
+
+
+const Test: React.FC<TestProps> = ({ answers, setAnswers }) => {
   const data: QuizData = test;
   const [currentQuestion, setCurrentQuestion] = useState<number>(0);
-  const [answers, setAnswers] = useState<number[]>([]);
+  
   const navigate = useNavigate();
   console.log(data)
 
@@ -21,7 +27,7 @@ const Test: React.FC = () => {
 
   return (
     <>
-      <div className="container mx-auto flex flex-col min-h-screen">
+      <div className="container mx-auto flex flex-col min-h-screen item">
         <button
           onClick={() => {
             setCurrentQuestion(
@@ -51,10 +57,10 @@ const Test: React.FC = () => {
           ))}
         </div>
         <button
-          className="font-poppins mt-8"
+          className='font-poppins border-2 border-blue-800 text-blue-800 w-fit pl-6 pr-6 p-2 mt-6 rounded-xl hover:bg-blue-800 hover:text-white transition duration-150'
           onClick={() => {
             if (currentQuestion == (data.test.length - 1) ) {
-              navigate("/")
+              navigate("/test-result")
             } else 
             setCurrentQuestion(
               (prevCurrentQuestion: number) => prevCurrentQuestion + 1
