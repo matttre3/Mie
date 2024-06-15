@@ -3,6 +3,7 @@ import test from "../assets/test.json";
 import { QuizData } from "../types";
 import cx from "classnames";
 import { useNavigate } from "react-router-dom";
+import Logo from "./Logo";
 
 interface TestProps {
   answers: number[];
@@ -27,24 +28,28 @@ const Test: React.FC<TestProps> = ({ answers, setAnswers }) => {
 
   return (
     <>
-      <div className="container mx-auto flex flex-col min-h-screen item">
-        <button
+      <div className="container mx-auto flex flex-col min-h-screen justify-center items-center">
+        <div className="mb-8">
+          <Logo></Logo>
+        </div>
+        { (currentQuestion !=0) && <button
           onClick={() => {
-            setCurrentQuestion(
-              (prevCurrentQuestion: number) => prevCurrentQuestion - 1
-            );
+              
+              setCurrentQuestion(
+                (prevCurrentQuestion: number) => prevCurrentQuestion - 1
+              );
             
           }}
         >
           down
-        </button>
-        <p className="text-center font-poppins">{data.test[currentQuestion].question}</p>
+        </button>}
+        <p className="text-center font-poppins text-2xl font-bold">{data.test[currentQuestion].question}</p>
         <div className="flex flex-wrap gap-10 mt-8 items-stretch justify-center">
           {data.test[currentQuestion].answers.map((answer, index) => (
             <div
-              className={cx("border-2 p-5 w-auto h-auto  flex flex-col items-center justify-center", {
-                "border-red-500": answers[currentQuestion] === index,
-                "border-slate-500": answers[currentQuestion] != index,
+              className={cx("border-2 p-5 w-auto h-auto  flex flex-col items-center justify-center transition duration-150", {
+                "border-blue-800 bg-blue-100": answers[currentQuestion] === index,
+                "border-stone-400": answers[currentQuestion] != index,
               })}
               key={index}
               onClick={() => {
@@ -57,7 +62,7 @@ const Test: React.FC<TestProps> = ({ answers, setAnswers }) => {
           ))}
         </div>
         <button
-          className='font-poppins border-2 border-blue-800 text-blue-800 w-fit pl-6 pr-6 p-2 mt-6 rounded-xl hover:bg-blue-800 hover:text-white transition duration-150'
+          className='font-poppins border-2 border-blue-800 text-blue-800 w-fit pl-6 pr-6 p-2 mt-8 mb-8 rounded-xl hover:bg-blue-800 hover:text-white transition duration-300'
           onClick={() => {
             if (currentQuestion == (data.test.length - 1) ) {
               navigate("/test-result")
