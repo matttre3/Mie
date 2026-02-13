@@ -1,13 +1,19 @@
-import { useNavigate } from 'react-router'
+import { useNavigate } from "react-router-dom";
 
 const Logo = () => {
-    const navigate = useNavigate()
-  return (
-    <div onClick={() => {navigate("/");}} className='flex flex-col items-center cursor-pointer'>
-        <img className='w-20' src="/MIE-LOGO.png" alt="" />
-        <img className='w-12 mt-2' src="/Mie.svg" alt="" />
-    </div>
-  )
-}
+  const navigate = useNavigate();
 
-export default Logo
+  return (
+    <div
+      onClick={() => {
+        navigate("/");
+      }}
+      className="flex cursor-pointer flex-col items-center"
+    >
+      <img className="w-20" src="/MIE-LOGO.png" alt="Mie logo" />
+      <img className="mt-2 w-12" src="/Mie.svg" alt="Mie" />
+    </div>
+  );
+};
+
+export default Logo;

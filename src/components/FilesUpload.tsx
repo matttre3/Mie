@@ -1,31 +1,36 @@
 import { ChangeEvent, DragEvent, useState } from "react";
 import cx from "classnames";
+
 interface Props {
   onChange: (files: FileList) => void;
 }
 
 const FilesUpload: React.FC<Props> = ({ onChange }) => {
   const [active, setActive] = useState(false);
+
   function onDragOver(ev: DragEvent<HTMLDivElement>) {
     ev.preventDefault();
     setActive(true);
   }
+
   function onDragLeave(ev: DragEvent<HTMLDivElement>) {
     ev.preventDefault();
     setActive(false);
   }
+
   function onDrop(ev: DragEvent<HTMLDivElement>) {
     ev.preventDefault();
     setActive(false);
     onChange(ev.dataTransfer.files);
   }
+
   function handleChange(ev: ChangeEvent<HTMLInputElement>) {
     onChange(ev.target.files ?? new FileList());
   }
 
   return (
     <div
-      className="flex items-center justify-center w-full mt-6 pl-4 pr-4"
+      className="mt-6 flex w-full items-center justify-center"
       onDragOver={onDragOver}
       onDragLeave={onDragLeave}
       onDrop={onDrop}
@@ -33,23 +38,25 @@ const FilesUpload: React.FC<Props> = ({ onChange }) => {
       <label
         htmlFor="dropzone-file"
         className={cx(
-          "flex flex-col items-center justify-center w-full h-96 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer",
+          "flex h-72 w-full max-w-2xl cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed px-6 text-center transition",
           {
-            "bg-gray-50 hover:bg-gray-100": !active,
-            "bg-gray-200": active,
+            "border-slate-300 bg-white/70 hover:border-slate-400 hover:bg-white":
+              !active,
+            "border-slate-600 bg-slate-50": active,
           }
         )}
       >
-        <div className="flex flex-col items-center justify-center pt-3 pb-4">
-          <img className="pb-2" src="upload-image.svg" alt="" />
-          <p className="mb-2 text-sm text-gray-500 dark:text-gray-400 poppins-regular">
-            <span className="poppins-bold">Clicca per caricare</span> oppure
-            trascina
-          </p>
-        </div>
+        <img className="w-14 pb-3 opacity-90" src="/upload-image.svg" alt="Upload" />
+        <p className="text-sm text-slate-700 sm:text-base">
+          <span className="font-semibold">Click to upload</span> or drag and
+          drop your image here
+        </p>
+        <p className="mt-2 text-xs text-slate-500">JPG, PNG or WEBP</p>
+
         <input
           id="dropzone-file"
           type="file"
+          accept="image/*"
           className="hidden"
           onChange={handleChange}
         />

@@ -11,28 +11,28 @@ const ColorSquare: React.FC<ColorSquareProps> = ({
   isSelected,
   onClick,
 }) => {
+  const colorValue =
+    color.length === 3 ? `rgb(${color[0]},${color[1]},${color[2]})` : "black";
+
   return (
-    <>
-      <div className={"flex flex-col items-center"}>
-        <div
-          onClick={onClick}
-          className={"mt-4 mb-4 w-16 h-16 rounded-xl transition-all "}
-          style={{
-            background:
-              color.length === 3
-                ? `rgb(${color[0]},${color[1]},${color[2]})`
-                : "black",
-          }}
-        />
-        <div
-          className={
-            isSelected
-              ? "animate-bounce w-12 h-2 mb-4 bg-black rounded-xl"
-              : "h-2 mb-4"
-          }
-        ></div>
-      </div>
-    </>
+    <button
+      onClick={onClick}
+      className="group mt-4 flex flex-col items-center rounded-2xl p-1"
+      type="button"
+      aria-label={`Select color ${colorValue}`}
+    >
+      <span
+        className="h-16 w-16 rounded-xl border border-white/70 shadow-md transition group-hover:scale-105"
+        style={{ background: colorValue }}
+      />
+      <span
+        className={
+          isSelected
+            ? "mt-3 h-2 w-12 rounded-xl bg-slate-900"
+            : "mt-3 h-2 w-12 rounded-xl bg-transparent"
+        }
+      />
+    </button>
   );
 };
 
